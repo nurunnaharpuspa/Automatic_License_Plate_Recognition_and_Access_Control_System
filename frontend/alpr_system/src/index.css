@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { font-family: 'DM Sans', sans-serif; }
+  body {
+    background-color: #0f1117;
+    color: #e8eaf0;
+    min-height: 100vh;
+  }
+
+  /* custom scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #181c25; }
+  ::-webkit-scrollbar-thumb { background: #2a3040; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-amber text-bg font-display font-semibold text-sm px-5 py-2.5 rounded
+           hover:bg-yellow-400 transition-colors duration-150 disabled:opacity-40
+           disabled:cursor-not-allowed tracking-wide;
+  }
+  .btn-ghost {
+    @apply border border-border text-secondary text-sm px-4 py-2 rounded
+           hover:border-amber hover:text-amber transition-colors duration-150
+           disabled:opacity-40;
+  }
+  .btn-danger {
+    @apply bg-transparent border border-red/40 text-red text-sm px-4 py-2 rounded
+           hover:bg-red/10 transition-colors duration-150;
+  }
+  .input-field {
+    @apply w-full bg-bg border border-border rounded px-3 py-2.5 text-sm text-primary
+           placeholder:text-muted focus:outline-none focus:border-amber
+           transition-colors duration-150 font-body;
+  }
+  .card {
+    @apply bg-card border border-border rounded-lg p-5 animate-fade-in;
+  }
+  .plate-tag {
+    @apply font-mono text-amber bg-amber/10 border border-amber/30 rounded px-2.5 py-0.5 text-sm tracking-widest;
+  }
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-mono px-2 py-0.5 rounded-full border;
+  }
+}

@@ -1,0 +1,8 @@
+env: .\env\Scripts\activate.bat
+backend: python manage.py runserver
+frontend: npm run dev
+
+redis: sudo systemctl start redis-server
+ping: redis-cli ping
+
+daphne: daphne -b 0.0.0.0 -p 8000 alpr_system.asgi:application
